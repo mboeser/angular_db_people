@@ -8,6 +8,7 @@ myApp.controller("MyController", ["$scope", "$http", function($scope, $http){
     $scope.getPeople = function(){
         $http.get('/people').then(function(response){
             $scope.nameArray = response.data;
+            $scope.peopleOrder = 'name';
             console.log(response.data);
         });
     };
