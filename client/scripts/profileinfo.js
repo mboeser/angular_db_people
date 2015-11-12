@@ -3,7 +3,8 @@ myApp.directive('profileInfo',
         return {
             restrict: "E",
             scope: {
-                info: "="
+                info: "=",
+                action: "&"
             },
             templateUrl: "/views/people.html"
         }

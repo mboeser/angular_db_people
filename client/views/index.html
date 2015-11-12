@@ -42,11 +42,23 @@
             <input class="form-control" ng-model="query" placeholder="Search" autofocus>
         </form>
 
+
+        <form class="inline-form">
+            <input ng-model="info.name" type="text" placeholder="Enter your name">
+            <input ng-model="info.location" type="text" placeholder="Enter your Location">
+            <input ng-model="info.favoriteNumber" type="text" placeholder="Enter your Number">
+
+            <button ng-click="clickButton(info)" class="btn btn-info">Submit</button>
+
+        </form>
+
+
         <div class="row">
-        <div ng-repeat="person in nameArray | orderBy: peopleOrder:direction | filter: query">
-            <profile-info info="person"></profile-info>
+            <div ng-repeat="person in nameArray | orderBy: peopleOrder:direction | filter: query">
+                <profile-info info="person" action="deletePeople({foo: person._id})">
+                    </profile-info>
+            </div>
         </div>
-</div>
     </div>
 </div>
 </body>
