@@ -4,7 +4,9 @@ var path = require('path');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://localhost/ang_people');
+//mongoose.connect('mongodb://localhost/ang_people');
+mongoose.connect('mongodb://heroku_4595q04t:random_password@ds053164.mongolab.com:53164/heroku_4595q04t');
+
 mongoose.model('Message', new Schema({"name": String, "location":String, "FavoriteNumber": String},{collection: 'people'}));
 var Message = mongoose.model('Message');
 
